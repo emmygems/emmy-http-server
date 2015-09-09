@@ -1,0 +1,5 @@
+
+gem 'sinatra'
+gem 'emmy'
+gem 'emmy-http-server', path: '../'
+gem 'emmy-http'
