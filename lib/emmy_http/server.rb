@@ -7,7 +7,7 @@ require "emmy_http/server/server"
 module EmmyHttp
   module Server
     INITIAL_BODY = ''
-    INITIAL_BODY.encode!(Encoding::ASCII_8BIT) if INITIAL_BODY.respond_to?(:encode)
+    INITIAL_BODY.encode!(::Encoding::ASCII_8BIT) if INITIAL_BODY.respond_to?(:encode)
 
     SERVER_NAME         = 'Emmy'.freeze
     RACK_VERSION_NUM    = [1, 0]
