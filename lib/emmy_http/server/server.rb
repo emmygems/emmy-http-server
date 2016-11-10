@@ -64,7 +64,7 @@ module EmmyHttp
         res.keep_alive = req.keep_alive?
         res.attach(conn)
 
-        EmmyMachine.fiber_block do
+        EmmyMachine.async do
           # Process request event
           begin
             request!(req, res)

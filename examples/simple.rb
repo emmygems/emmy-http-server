@@ -1,15 +1,24 @@
 require 'bundler/setup'
-require 'emmy'
+require 'emmy_machine'
+require 'emmy_http'
 require 'emmy_http/server'
 require './app'
 using EventObject
 
+# Without emmy engine
+module Emmy
+  extend EmmyMachine::ClassMethods
+  include EventObject
+  include Fibre::Synchrony
+end
+
 Emmy.run do
-  app = EmmyHttp::Application.new do
+  app = ::Rack::Builder.app do
     run Sinatra::Application
   end
 
-  server = EmmyHttp::Server::Server.new(Emmy::Runner.instance.config, app)
+  config = EmmyHttp::Configuration.new
+  server = EmmyHttp::Server::Server.new(config, app)
 
   Emmy.bind(*server)
   puts "Bind server on #{server.config.url}"

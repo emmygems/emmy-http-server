@@ -13,7 +13,7 @@ end
 bind *server
 ```
 
-### Routing
+### Routing (not ready yet)
 
 ```ruby
 server do

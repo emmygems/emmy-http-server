@@ -109,8 +109,8 @@ module EmmyHttp
       @env['REMOTE_ADDR']     = remote_address
       @env['REQUEST_METHOD']  = http_method
       @env['REQUEST_URI']     = url.to_s
-      @env['QUERY_STRING']    = url.query# || ""
-      @env['SCRIPT_NAME']     = ""
+      @env['QUERY_STRING']    = url.query || '' # string required
+      @env['SCRIPT_NAME']     = ''
       @env['REQUEST_PATH']    = url.path
       @env['PATH_INFO']       = url.path
       @env['FRAGMENT']        = url.fragment

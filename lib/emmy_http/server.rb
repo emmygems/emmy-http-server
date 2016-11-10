@@ -1,8 +1,10 @@
-require "emmy_http/server/version"
-require "emmy_http/server/parser"
-require "emmy_http/server/request"
-require "emmy_http/server/response"
-require "emmy_http/server/server"
+require 'event_object'
+require 'model_pack'
+require 'emmy_http/server/version'
+require 'emmy_http/server/parser'
+require 'emmy_http/server/request'
+require 'emmy_http/server/response'
+require 'emmy_http/server/server'
 
 module EmmyHttp
   module Server
